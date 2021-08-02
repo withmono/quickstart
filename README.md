@@ -4,7 +4,7 @@ This repository accompanies Mono's [**quickstart guide**]().
 
 Here you'll find full example integration apps using our [**libraries**](https://docs.mono.co/docs/overview):
 
-![Mono quickstart app](/assets/quickstart.png)
+![Mono quickstart app](/assets/quickstart_demo.png)
 
 ## Table of contents
 
@@ -111,4 +111,3 @@ If you find any issue using this package please let us know by filing an issue r
 ## License
 
 [MIT](https://github.com/withmono/quickstart/tree/main/LICENSE) for more information.
-
