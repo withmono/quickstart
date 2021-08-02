@@ -1,4 +1,4 @@
-# Mono quickstart
+# Mono Quickstart
 
 This repository accompanies Mono's [**quickstart guide**]().
 
