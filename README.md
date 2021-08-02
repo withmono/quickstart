@@ -45,7 +45,7 @@ $ cd quickstart
 $ cp .env.example .env
 ```
 
-Copy `.env.example` to a new file called `.env` and fill out the environment variables inside. Add your `MONO_PUBLIC` and `MONO_SECRET`. Get your Client ID and secrets from
+Copy `.env.example` to a new file called `.env` and fill out the environment variables inside. Add your `REACT_APP_MONO_PUBLIC` and `MONO_SECRET`. Get your Client ID and secrets from
 the dashboard: [https://app.mono.co/apps](https://app.mono.co/apps)
 
 > NOTE: `.env` files are a convenient local development tool. Never run a production application
