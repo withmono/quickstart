@@ -1,0 +1,23 @@
+
+.account-box-row{
+  display: flex;
+  border: 1px solid #ebebeb;
+  height: 50%;
+  margin: 0;
+}
+
+.account-box-property{
+  padding: 1.6rem 2.4rem 1.6rem 4rem;
+  flex: 1 1;
+  font-weight: bold;
+  font-family: Inconsolata, Consolas, Courier, monospace;
+  color: #111111;
+  text-align: right;
+}
+
+.account-box-value{
+  text-align: left;
+  padding: 1.6rem 2.4rem 1.6rem 0;
+  flex: 5 1;
+  font-family: Inconsolata, Consolas, Courier, monospace;
+}
