@@ -4,7 +4,7 @@ This repository accompanies Mono's [**quickstart guide**]().
 
 Here you'll find full example integration apps using our [**libraries**](https://docs.mono.co/docs/overview):
 
-![Mono quickstart app](/assets/quickstart_hero.png)
+![Mono quickstart app](/assets/quickstart_splash.png)
 
 ## Table of contents
 
