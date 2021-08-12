@@ -46,10 +46,12 @@
   background: rgba(0, 0, 0, 0);
   border: 1px solid #111111;
   outline-color: #0868b8;
+  border-radius: 4px;
 }
 .endpoint-button:hover{
   background: rgba(0, 0, 0, 0);
   border: 1px solid #0868b8;
+  color: #0868b8;
   cursor: pointer;
 }
 .endpoint-container-json{
@@ -60,4 +62,23 @@
   max-height: 600px;
   overflow: scroll;
   margin-bottom: 32px;
+}
+
+.endpoint-buttons{
+
+}
+
+.endpoint-reset{
+
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  color: #c71b29;
+  transition: all 0.1s ease;
+
+}
+
+.endpoint-reset:hover{
+  color: #ff0015;
 }

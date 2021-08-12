@@ -12,7 +12,7 @@ export default function AccountBox(props){
       <span className='account-box-value'>{props.token}</span>
     </p>
 
-    <p className='account-box-row'>
+    <p className='account-box-row top-border'>
       <span className='account-box-property'>id</span>
       <span className='account-box-value'>{props.accountId}</span>
     </p>

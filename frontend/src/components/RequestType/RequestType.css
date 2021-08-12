@@ -1,5 +1,5 @@
 .request-type{
-  margin: 1.6rem 0px 1.6rem 2.4rem;
+  /* margin: 1.6rem 0px 1.6rem 2.4rem;
   font-size: 1.4rem;
   display: inline-flex;
   -webkit-box-align: center;
@@ -14,21 +14,54 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  padding: 0 0.8rem 0 0.8rem;
+  padding: 0 0.8rem 0 0.8rem; */
+
+  /* margin: 2.4rem 0px 1.6rem 2.4rem;
+  font-size: 1.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  min-width: 7.2rem;
+  border-radius: 0.2rem;
+  line-height: 1;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  padding: 0 0.8rem 0 0.8rem; */
+
+  margin: auto 0px auto 2.4rem;
+  font-size: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  min-width: 7rem;
+  border-radius: 200px;
+  line-height: 1;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  padding: 0.8rem 0 0.8rem 0;
+
 }
 
 .post-request{
-  border: 1px solid #0272d9;
+  color: white;
+  background-color: #0272d9;
 }
 
 .get-request{
-  border: 1px solid #0e9b71;
+  color: white;
+  background-color: #0e9b71;
 }
 
 .put-request{
-  border: 1px solid #674ead;
+  color: white;
+  background-color: #674ead;
 }
 
 .delete-request{
-  border: 1px solid #c71b29;
+  color: white;
+  background-color: #c71b29;
 }

@@ -4,8 +4,8 @@
   flex-direction: column;
   height: auto;
   width: 100%;
-  box-shadow: 0 0.8rem 0.8rem 0 rgb(17 17 17 / 8%);
+  box-shadow: 0 0.8rem 2rem 0.5rem rgb(17 17 17 / 8%);
   margin-top: 2.4rem;
-  border-radius: 2px;
+  border-radius: 16px;
 
 }
