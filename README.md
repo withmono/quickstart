@@ -8,20 +8,23 @@ Here you'll find full example integration apps using our [**libraries**](https:/
 
 ## Table of contents
 
-<!-- toc -->
-
 - [1. Clone the repository](#1-clone-the-repository)
 - [2. Set up your environment variables](#2-set-up-your-environment-variables)
 - [3. Run the quickstart](#3-run-the-quickstart)
-    - [Pre-requisites](#pre-requisites)
-    - [Quickstart Scripts](#quickstart-scripts)
-      - [Setup](#scripts-setup)
-      - [Start Node](#scripts-start-node)
-    - [1. Running the backend](#1-running-the-backend)
-      - [Node](#node)
-    - [2. Running the frontend](#2-running-the-frontend)
-
-<!-- tocstop -->
+    - [Run with Docker](#docker)
+      - [Prerequisites](#docker-prerequisites)
+      - [Running](#running-1)
+        - [Start the container](#start-the-container)
+        - [View the logs](#view-the-logs)
+        - [Stop the container](#stop-the-container)
+    - [Run without Docker](#no-docker)
+      - [Pre-requisites](#no-docker-prerequisites)
+      - [Quickstart Scripts](#quickstart-scripts)
+        - [Setup](#scripts-setup)
+        - [Start Node](#scripts-start-node)
+      - [1. Running the backend](#1-running-the-backend)
+        - [Node](#node)
+      - [2. Running the frontend](#2-running-the-frontend)
 
 ## <a name="1-clone-the-repository"></a> 1. Clone the repository
 
@@ -48,12 +51,60 @@ $ cp .env.example .env
 Copy `.env.example` to a new file called `.env` and fill out the environment variables inside. Add your `REACT_APP_MONO_PUBLIC` and `MONO_SECRET`. Get your Client ID and secrets from
 the dashboard: [https://app.mono.co/apps](https://app.mono.co/apps)
 
-> NOTE: `.env` files are a convenient local development tool. Never run a production application
-> using an environment file with secrets in it.
+> NOTE: `.env` files are designed for development only. Never run a production application with an environment file that contains secrets.
 
 ## <a name="3-run-the-quickstart"></a> 3. Run the Quickstart
 
-#### <a name="pre-requisites"></a> Pre-requisites
+### <a name="docker"></a> Run with Docker
+
+#### Pre-requisites
+
+- `make` command in your terminal: [https://formulae.brew.sh/formula/make](https://formulae.brew.sh/formula/make)
+- Docker installed and running on your machine: [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/)
+- Your environment variables in a `.env` file as noted above
+- If using Windows, a working Linux installation on Windows 10. If you are using Windows and do not already have WSL or Cygwin configured, we recommend [running without Docker](#no-docker) (it's easier than installing WSl or Cygwin).
+
+#### Running
+
+There are three `make` commands available
+
+- `up`: builds and starts the container
+- `logs`: tails logs for running application
+- `stop`: stops the container, you can also use the Docker GUI
+
+Each of these should be used with a `language` argument, which is `node`. If unspecified, the default is `node`.
+
+##### Start the container
+
+```
+$ make up language=node
+```
+
+The quickstart backend is now running on [http://localhost:8080](http://localhost:8080) and frontend on [http://localhost:3000](http://localhost:3000).
+
+If you change contents of the server files or `.env` file, simply run `make up language=node` to rebuild and restart the server.
+
+If you experience a Docker connection error when running the command above, try the following:
+
+- Make sure Docker is running
+- Try running the command prefixed with `sudo`
+
+##### View the logs
+
+```
+$ make logs
+```
+
+##### Stop the container
+
+```
+$ make stop
+```
+
+
+### <a name="no-docker"></a> Run without Docker
+
+#### <a name="no-docker-prerequisites"></a> Prerequisites
 
 - The language you intend to use is installed on your machine and available at your command line.
   This repo should generally work with active LTS versions of each language such as node >= 14
@@ -89,7 +140,7 @@ Once started with one of the commands below, the quickstart will be running on [
 ```
 $ cd ./node
 $ npm install
-$ ./start.sh
+$ npm start
 ```
 
 #### <a name="2-running-the-frontend"></a> 2. Running the frontend
