@@ -15,7 +15,7 @@ export default function(app){
     monoClient.auth.getAccountId({code: req.query.token},(err, results) => {
         if (err) {
             console.log(err)
-            res.status(500).json(results)
+            res.status(500).json(err)
         }
         else if (results){
             console.log(results)
@@ -32,7 +32,7 @@ export default function(app){
     monoClient.account.getAccountInformation({accountId: req.params.id}, (err, results) => {
         if (err) {
             console.log(err)
-            res.status(500).json(results)
+            res.status(500).json(err)
         }
         else if (results){
             console.log(results)
@@ -49,7 +49,7 @@ export default function(app){
     monoClient.account.getAccountStatement({accountId: req.params.id, output: 'json'}, (err, results) => {
         if (err) {
             console.log(err)
-            res.status(500).json(results)
+            res.status(500).json(err)
         }
         else if (results){
             console.log(results)
@@ -66,7 +66,7 @@ export default function(app){
     monoClient.account.getAccountTransactions({accountId: req.params.id}, (err, results) => {
         if (err) {
             console.log(err)
-            res.status(500).json(results)
+            res.status(500).json(err)
         }
         else if (results){
             console.log(results)
@@ -83,7 +83,7 @@ export default function(app){
     monoClient.account.getIncome({accountId: req.params.id}, (err, results) => {
         if (err) {
             console.log(err)
-            res.status(500).json(results)
+            res.status(500).json(err)
         }
         else if (results){
             console.log(results)
@@ -100,7 +100,7 @@ export default function(app){
     monoClient.account.getIdentity({accountId: req.params.id}, (err, results) => {
         if (err) {
             console.log(err)
-            res.status(500).json(results)
+            res.status(500).json(err)
         }
         else if (results){
             console.log(results)
@@ -117,7 +117,7 @@ export default function(app){
     monoClient.account.unlinkAccount({accountId: req.params.id}, (err, results) => {
         if (err) {
             console.log(err)
-            res.status(500).json(results)
+            res.status(500).json(err)
         }
         else if (results){
             console.log(results)
@@ -134,7 +134,7 @@ export default function(app){
     monoClient.user.walletBalance((err, results) => {
         if (err) {
             console.log(err)
-            res.status(500).json(results)
+            res.status(500).json(err)
         }
         else if (results){
             console.log(results)
@@ -151,7 +151,7 @@ export default function(app){
     monoClient.misc.institutions((err, results) => {
         if (err) {
             console.log(err)
-            res.status(500).json(results)
+            res.status(500).json(err)
         }
         else if (results){
             console.log(results)

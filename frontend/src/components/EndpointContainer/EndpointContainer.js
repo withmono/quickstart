@@ -43,12 +43,19 @@ export default function EndpointContainer(props){
     })
     .catch((error) => {
       console.log(error)
+      if(error.response && error.response.data)
+        setJson(error.response.data)
+
     })
     .finally(() => {
       setLoading(false)
     })
 
 
+  }
+
+  const resetData = () => {
+    setJson('')
   }
 
   return(<React.Fragment>
@@ -62,8 +69,10 @@ export default function EndpointContainer(props){
         </div>
         <div className='endpoint-description'>{description}</div>
       </div>
-      <div onClick={sendRequest} className='endpoint-button'>{loading ? 'Loading...' : 'Send request'}</div>
-
+      <div className='endpoint-buttons'>
+        <div onClick={sendRequest} className='endpoint-button'>{loading ? 'Loading...' : 'Send request'}</div>
+        <div onClick={resetData} className='endpoint-reset'>Reset</div>
+      </div>
     </div>
     {json != '' ?
       <div className='endpoint-container-json'>
