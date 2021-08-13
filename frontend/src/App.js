@@ -18,7 +18,7 @@ export default function App() {
 
   const startPolling = () => {
     if(!serverOn){
-      axios.get('http://localhost:8080/ping')
+      axios.get(`${process.env.REACT_APP_API_HOST}/ping`)
       .then((result) => {
         setServerOn(true)
       })
