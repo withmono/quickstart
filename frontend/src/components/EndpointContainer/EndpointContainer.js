@@ -23,7 +23,7 @@ export default function EndpointContainer(props){
 
     var request;
 
-    const url = `http://localhost:8080${apiCall}`
+    const url = `${process.env.REACT_APP_API_HOST}/api${apiCall}`
 
     if(method == 'get'){
       request = axios.get(url)

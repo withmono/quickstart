@@ -18,7 +18,7 @@ export default function App() {
 
   const startPolling = () => {
     if(!serverOn){
-      axios.get(`${process.env.REACT_APP_API_HOST}/ping`)
+      axios.get(`${process.env.REACT_APP_API_HOST}/api/ping`)
       .then((result) => {
         setServerOn(true)
       })
@@ -45,7 +45,7 @@ export default function App() {
       console.log("code", code)
       // now to backend
       setToken(code)
-      axios.get(`${process.env.REACT_APP_API_HOST}/exchangetoken?token=${code}`)
+      axios.get(`${process.env.REACT_APP_API_HOST}/api/exchangetoken?token=${code}`)
       .then((result) => {
         console.log(result.data.id)
         setAccountId(result.data.id)

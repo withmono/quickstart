@@ -10,7 +10,7 @@ export default function(app){
 
   // Initial authentication with Mono Widget and backend
   // https://docs.mono.co/reference/authentication-endpoint
-  app.get('/exchangetoken', (req, res) => {
+  app.get('/api/exchangetoken', (req, res) => {
 
     monoClient.auth.getAccountId({code: req.query.token},(err, results) => {
         if (err) {
@@ -27,7 +27,7 @@ export default function(app){
 
   // Get an authenticated users bank account details
   // https://docs.mono.co/reference/bank-account-details
-  app.get('/accounts/:id', (req, res) => {
+  app.get('/api/accounts/:id', (req, res) => {
 
     monoClient.account.getAccountInformation({accountId: req.params.id}, (err, results) => {
         if (err) {
@@ -44,7 +44,7 @@ export default function(app){
 
   // Query an account's bank statement
   // https://docs.mono.co/reference/bank-statement
-  app.get('/accounts/:id/statement', (req, res) => {
+  app.get('/api/accounts/:id/statement', (req, res) => {
 
     monoClient.account.getAccountStatement({accountId: req.params.id, output: 'json'}, (err, results) => {
         if (err) {
@@ -61,7 +61,7 @@ export default function(app){
 
   // View an account's bank transaction history
   // https://docs.mono.co/reference/transactions
-  app.get('/accounts/:id/transactions', (req, res) => {
+  app.get('/api/accounts/:id/transactions', (req, res) => {
 
     monoClient.account.getAccountTransactions({accountId: req.params.id}, (err, results) => {
         if (err) {
@@ -78,7 +78,7 @@ export default function(app){
 
   // Get an estimated income for an account
   // https://docs.mono.co/reference/income
-  app.get('/accounts/:id/income', (req, res) => {
+  app.get('/api/accounts/:id/income', (req, res) => {
 
     monoClient.account.getIncome({accountId: req.params.id}, (err, results) => {
         if (err) {
@@ -95,7 +95,7 @@ export default function(app){
 
   // Get an account's KYC and indentity information
   // https://docs.mono.co/reference/identity
-  app.get('/accounts/:id/identity', (req, res) => {
+  app.get('/api/accounts/:id/identity', (req, res) => {
 
     monoClient.account.getIdentity({accountId: req.params.id}, (err, results) => {
         if (err) {
@@ -112,7 +112,7 @@ export default function(app){
 
   // Unlink an account upon request
   // https://docs.mono.co/reference/mono-unlink-account
-  app.post('/accounts/:id/unlink', (req, res) => {
+  app.post('/api/accounts/:id/unlink', (req, res) => {
 
     monoClient.account.unlinkAccount({accountId: req.params.id}, (err, results) => {
         if (err) {
@@ -129,7 +129,7 @@ export default function(app){
 
   // View your Mono wallet balance
   // https://docs.mono.co/reference/fetch-balance
-  app.get('/users/stats/wallet', (req, res) => {
+  app.get('/api/users/stats/wallet', (req, res) => {
 
     monoClient.user.walletBalance((err, results) => {
         if (err) {
@@ -146,7 +146,7 @@ export default function(app){
 
   // View Mono's bank coverage
   // https://docs.mono.co/reference/list-institutions
-  app.get('/coverage', (req, res) => {
+  app.get('/api/coverage', (req, res) => {
 
     monoClient.misc.institutions((err, results) => {
         if (err) {

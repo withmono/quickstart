@@ -1,7 +1,7 @@
 
 export default function(app){
 
-  app.get('/ping', (req, res) => {
+  app.get('/api/ping', (req, res) => {
     res.send('pong')
   })
 
