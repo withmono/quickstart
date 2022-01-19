@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Deploy to instance
-        uses: easingthemes/ssh-deploy@vmain
+        uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.KEY }}
           SOURCE: './'
