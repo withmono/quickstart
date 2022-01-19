@@ -34,4 +34,4 @@ jobs:
             docker rm $(docker ps -a -q)
             docker rmi $(docker images -a -q)
             docker system prune -af
-            docker-compose up >> ../logs/quickstart.log
+            docker-compose up >> ../logs/quickstart.log &
