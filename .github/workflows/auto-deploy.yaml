@@ -20,7 +20,7 @@ jobs:
           REMOTE_USER: ${{ secrets.USER }}
           TARGET: '/home/web/quickstart/'
 
-      - name: Start new docker-compose process
+      - name: Start docker-compose process with new services
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
