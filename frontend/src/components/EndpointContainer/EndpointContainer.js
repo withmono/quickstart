@@ -15,6 +15,7 @@ export default function EndpointContainer(props){
   const description = props.description
   const apiCall = props.apiCall
   const product = props.product
+  const country = props.country
 
   const [loading, setLoading] = React.useState(false)
   const [json, setJson] = React.useState('')
@@ -26,13 +27,13 @@ export default function EndpointContainer(props){
     const url = `${process.env.REACT_APP_API_HOST}/api${apiCall}`
 
     if(method == 'get'){
-      request = axios.get(url)
+      request = axios.get(url, {params: {country}})
     }else if(method == 'post'){
-      request = axios.post(url)
+      request = axios.post(url, {params: {country}})
     }else if(method == 'put'){
-      request = axios.put(url)
+      request = axios.put(url, {params: {country}})
     }else if(method == 'delete'){
-      request = axios.delete(url)
+      request = axios.delete(url, {params: {country}})
     }
 
     setLoading(true)
