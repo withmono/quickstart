@@ -1,0 +1,37 @@
+name: Production Deployment For Quickstart
+
+on:
+  push:
+    branches: mono-fx-cicd
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@master
+
+      - name: Deploy to instance
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.KEY }}
+          SOURCE: './'
+          REMOTE_HOST: ${{ secrets.HOST }}
+          REMOTE_USER: ${{ secrets.USER }}
+          TARGET: '/home/web/quickstart/'
+
+      - name: Start docker-compose process with new services
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          port: 22
+          key: ${{ secrets.KEY }}
+          script: |
+            cd ~/quickstart
+            docker kill $(docker ps -q)
+            docker container kill $(docker ps -q)
+            docker rm $(docker ps -a -q)
+            docker rmi $(docker images -a -q)
+            docker system prune -af
+            docker-compose up -d >> ../logs/quickstart.log
