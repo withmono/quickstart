@@ -2,7 +2,7 @@ name: Production Deployment For Quickstart
 
 on:
   push:
-    branches: mono-fx-cicd
+    branches: main
 
 jobs:
   deploy:
