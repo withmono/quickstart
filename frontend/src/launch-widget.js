@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import './App.css'
 
 import ConnectButton from './components/ConnectButton/ConnectButton.js'
@@ -20,9 +20,7 @@ export default function LaunchWidget() {
   let navigate = useNavigate();
   let {country} = useParams()
 
-  const startPolling = useCallback(() => {
-    console.log("the result", serverOn)
-    
+  const startPolling = () => {  
     if(!serverOn){
       axios.get(`${process.env.REACT_APP_API_HOST}/api/ping`)
       .then((result) => {
@@ -34,17 +32,13 @@ export default function LaunchWidget() {
         setTimeout(startPolling, 2500)
       })
     }
-  }, [serverOn])
+  }
 
   React.useEffect(() => {
 
     startPolling()
 
   }, [])
-
-  function poll() {
-    startPolling()
-  }
 
   function getPublicKey() {
     const available = serviceCountries.includes(country.toLowerCase());
