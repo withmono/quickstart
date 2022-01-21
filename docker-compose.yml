@@ -26,6 +26,9 @@ services:
     environment:
       - REACT_APP_API_HOST
       - REACT_APP_MONO_PUBLIC
+      - REACT_APP_MONO_PUBLIC_KE
+      - REACT_APP_MONO_PUBLIC_ZA
+      - REACT_APP_MONO_PUBLIC_GH
     networks:
       - "quickstart"
     build:
